@@ -9,7 +9,8 @@
 }
 
 body {
-  background-color: #22254b;
+  background: rgb(63,94,251);
+  background: linear-gradient(180deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
   color: white;
   font-family: "Poppins", sans-serif;
   margin: 0;
@@ -17,7 +18,6 @@ body {
 
 /*
   Flex Direction: https://origamid.com/projetos/flexbox-guia-completo/#flex-direction
-
   No modo column os itens ficam em uma unica coluna, um abaixo do outro
 */
 .root {
@@ -27,11 +27,61 @@ body {
 
 header {
   display: flex;
-  justify-content: flex-end;
-  background-color: #373b69;
+  justify-content: space-between;
+  background-color: #3f5efb;
   padding: 1rem;
 }
+.header__img{
+width: 100px;
+}
 
+.header__img {
+
+  width: 200px;
+}
+
+.header__menu {
+	margin-right: 30px;
+}
+
+.header__menu ul {
+  display: none;
+  list-style: none;
+  margin: 0px 0px 0px -14px;
+  padding: 0px;
+  position: absolute;
+  width: 130px;
+  text-align: right;
+}
+
+.header__menu:hover ul, ul:hover {
+	display: block;
+}
+
+.header__menu li {
+  margin: 10px 0px;
+}
+
+.header__menu li a {
+  color: white;
+  text-decoration: none;
+}
+
+.header__menu li a:hover {
+  text-decoration: underline;
+  width: 100;
+}
+
+.header__menu--profile {
+  align-items: center;
+  display: flex;
+  cursor: pointer;
+}
+
+.header__menu--profile img {
+  margin-right: 8px;
+  width: 50px;
+}
 .search {
   background-color: transparent;
   border: 2px solid #22254b;
@@ -89,7 +139,6 @@ header {
 /*
  Sobre a propriedade position e o porque ele esta respeitando o elemento .movie:
  https://pt-br.learnlayout.com/position.html
-
  Sobre a propriedade transform:
  https://developer.mozilla.org/pt-BR/docs/Web/CSS/transform
 */
@@ -131,4 +180,38 @@ header {
 
 .tag.red {
   color: red;
+}
+
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 300px;
+  margin-top: -80px;
+  border-radius: 0px 0px 40px 40px;
+}
+
+.main__title {
+  color: white;
+  font-size: 200%;
+}
+
+.input {
+  background-color: rgba(255,255,255,0.1);
+  border: 2px solid white;
+  border-radius: 25px;
+  color: white;
+  font-family: 'Muli', sans-serif;
+  font-size: 16px;
+  height: 50px;
+  margin-bottom: 20px;
+  outline: none;
+  padding: 0px 20px;
+  width: 100%;
+}
+
+::placeholder {
+  color: white;
 }

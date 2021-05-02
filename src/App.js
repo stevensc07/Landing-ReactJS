@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Movie from "./components/Movie";
-
+import logo from './assets/img/logo.png'
+import userIcon from './assets/img/user-icon.png';
 const FEATURED_API =
   "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=7ecd0b11bc4cd387a22b43cb37086584";
 const SEARCH_API =
@@ -36,16 +37,37 @@ function App() {
   return (
     <>
       <header>
-        <form onSubmit={handleOnSubmit}>
-          <input
-            type="search"
-            className="search"
-            placeholder="Buscar"
-            value={searchTerm}
-            onChange={handleOnChange}
-          />
-        </form>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', }}>
+          <img onClick={() => { getMovies(FEATURED_API); }} className="header__img" src={logo} alt="MoviesTime" />
+          <samp style={{  fontSize: 25, marginLeft:-10, paddingTop:15 }}>MoviesTime</samp>
+        </div>
+        <div className="header__menu">
+          <div className="header__menu--profile">
+            <img src={userIcon} alt="" />
+            <p>Perfil</p>
+          </div>
+          <ul>
+            <li><a href="/">Iniciar Sesión</a></li>
+          </ul>
+        </div>
+
       </header>
+      <div>
+
+        <section className="main">
+          <h2 className="main__title">¿Qué quieres ver hoy?</h2>
+          <form onSubmit={handleOnSubmit}>
+            <input
+              type="search"
+              className="input"
+              placeholder="Search..."
+              value={searchTerm}
+              onChange={handleOnChange}
+            />
+          </form>
+        </section>
+
+      </div>
       <div className="movie-container">
         {movies.length > 0 &&
           movies.map((movie) => <Movie key={movie.id} {...movie} />)}

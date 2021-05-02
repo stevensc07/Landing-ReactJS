@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import Movie from "./components/Movie";
-import logo from './assets/img/logo.png'
-import userIcon from './assets/img/user-icon.png';
+import Movie from "../../../components/Movie";
+import logo from '../../../assets/img/logo.png'
+import userIcon from '../../../assets/img/user-icon.png';
+import './__styles__/index.css';
 const FEATURED_API =
   "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=7ecd0b11bc4cd387a22b43cb37086584";
 const SEARCH_API =
@@ -37,13 +38,15 @@ function App() {
   return (
     <>
       <header>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', }}>
+
           <img onClick={() => { getMovies(FEATURED_API); }} className="header__img" src={logo} alt="MoviesTime" />
-          <samp style={{  fontSize: 25, marginLeft:-10, paddingTop:15 }}>MoviesTime</samp>
+          <samp onClick={() => { getMovies(FEATURED_API); }} className='samp'>MoviesTime</samp>
+
         </div>
         <div className="header__menu">
           <div className="header__menu--profile">
-            <img src={userIcon} alt="" />
+            <img className='profile' src={userIcon} alt="" />
             <p>Perfil</p>
           </div>
           <ul>

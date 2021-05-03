@@ -17,6 +17,12 @@ header {
     height: auto;
     cursor: pointer;
 }
+.play__img {
+    width: 24%;
+    height: auto;
+    cursor: pointer;
+}
+
 
 .profile {
     width: 10%;

@@ -2,11 +2,12 @@ import React, { useState, useEffect } from "react";
 import Movie from "../../../components/Movie";
 import logo from '../../../assets/img/logo.png'
 import userIcon from '../../../assets/img/user-icon.png';
+import { Link } from 'react-router-dom'
 import './__styles__/index.css';
 const FEATURED_API =
-  "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=7ecd0b11bc4cd387a22b43cb37086584";
+  "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=562bbdb9e5d866e02bfec9eef5edd161";
 const SEARCH_API =
-  "https://api.themoviedb.org/3/search/movie?&api_key=7ecd0b11bc4cd387a22b43cb37086584&query=";
+  "https://api.themoviedb.org/3/search/movie?&api_key=562bbdb9e5d866e02bfec9eef5edd161&query=";
 
 function App() {
   const [movies, setMovies] = useState([]);
@@ -35,7 +36,7 @@ function App() {
     getMovies(FEATURED_API);
   }, []);
 
-  return (
+  return movies.length === 0 ? <h1>Loading...</h1> : (
     <>
       <header>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', }}>
@@ -71,9 +72,19 @@ function App() {
         </section>
 
       </div>
+
       <div className="movie-container">
         {movies.length > 0 &&
-          movies.map((movie) => <Movie key={movie.id} {...movie} />)}
+          movies.map((movie) =>
+            <Link className="movie-container" to={{
+              pathname: '/information',
+              aboutprops: {
+                movie: movie,
+              }
+            }}>
+              <Movie className="movie-container" key={movie.id} {...movie} />
+            </Link>
+          )}
       </div>
     </>
   );

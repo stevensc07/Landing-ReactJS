@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<!-- saved from url=(0033)http://localhost:3000/information -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link rel="icon" href="http://localhost:3000/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Web site created using create-react-app">
+    <link rel="apple-touch-icon" href="http://localhost:3000/logo192.png">
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="http://localhost:3000/manifest.json">
+    <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+  <style>@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap);</style><style>* {
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(63,94,251);
+  background: linear-gradient(180deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+  color: white;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
+
+.root {
+  display: flex;
+  flex-direction: column;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9zcmMvaW5kZXguY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUNBO0VBQ0Usc0JBQXNCO0FBQ3hCOztBQUVBO0VBQ0UsMEJBQTBCO0VBQzFCLGtGQUFrRjtFQUNsRixZQUFZO0VBQ1osa0NBQWtDO0VBQ2xDLFNBQVM7QUFDWDs7QUFFQTtFQUNFLGFBQWE7RUFDYixzQkFBc0I7QUFDeEIiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0IHVybChcImh0dHBzOi8vZm9udHMuZ29vZ2xlYXBpcy5jb20vY3NzMj9mYW1pbHk9UG9wcGluczp3Z2h0QDIwMDs0MDA7NjAwJmRpc3BsYXk9c3dhcFwiKTtcbioge1xuICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xufVxuXG5ib2R5IHtcbiAgYmFja2dyb3VuZDogcmdiKDYzLDk0LDI1MSk7XG4gIGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgxODBkZWcsIHJnYmEoNjMsOTQsMjUxLDEpIDAlLCByZ2JhKDI1Miw3MCwxMDcsMSkgMTAwJSk7XG4gIGNvbG9yOiB3aGl0ZTtcbiAgZm9udC1mYW1pbHk6IFwiUG9wcGluc1wiLCBzYW5zLXNlcmlmO1xuICBtYXJnaW46IDA7XG59XG5cbi5yb290IHtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbn0iXSwic291cmNlUm9vdCI6IiJ9 */</style><style>header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #3f5efb;
+  padding: 1rem;
+}
+
+.header__img {
+  width: 24%;
+  height: auto;
+  cursor: pointer;
+}
+.profile{
+  width: 10%;
+  height: auto;
+}
+.header__menu {
+	margin-right: 50px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+ 
+}
+
+.header__menu ul {
+  display: none;
+  list-style: none;
+  margin: 0px 0px 0px -14px;
+  padding: 0px;
+  position: absolute;
+  width: 130px;
+  text-align: right;
+}
+
+.header__menu:hover ul, ul:hover {
+	display: block;
+}
+
+.header__menu li {
+  margin: 10px 0px;
+}
+
+.header__menu li a {
+  color: white;
+  text-decoration: none;
+}
+
+.header__menu li a:hover {
+  text-decoration: underline;
+  width: 100;
+}
+
+.header__menu--profile {
+  align-items: center;
+  display: flex;
+  cursor: pointer;
+}
+
+.header__menu--profile img {
+  margin-right: 8px;
+  width: 100%;
+  height: auto;
+}
+.search {
+  background-color: transparent;
+  border: 2px solid #22254b;
+  border-radius: 50px;
+  font-family: inherit;
+  font-size: 1.2rem;
+  padding: 0.5rem 1.5rem;
+  color: white;
+}
+
+.search:focus {
+  outline: none;
+}
+
+.search::placeholder {
+  color: white;
+}
+
+/*
+  Flex Wrap: https://origamid.com/projetos/flexbox-guia-completo/#flex-wrap
+*/
+.movie-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.movie {
+  background-color: #373b69;
+  border-radius: 10px;
+  box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
+  overflow: hidden;     /* Para a imagem nao criar uma borda pontuda na parte superior do box */
+  position: relative;   /* Relativo para ser referencia ao .movie-overview */
+  margin: 1rem;
+  width: 300px;
+}
+
+.movie img {
+  object-fit: cover;
+  height: 450px;
+  width: 100%;
+  border-top: 15px;
+}
+
+.movie-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.movie-info h3 {
+  margin: 0;
+}
+
+/*
+ Sobre a propriedade position e o porque ele esta respeitando o elemento .movie:
+ https://pt-br.learnlayout.com/position.html
+ Sobre a propriedade transform:
+ https://developer.mozilla.org/pt-BR/docs/Web/CSS/transform
+*/
+.movie-overview {
+  background-color: #fff;
+  color: #22254b;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  box-shadow: 0 -3px 5px rgba(0,0,0,0.1);
+  padding: 1rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: auto;
+  max-height: 100%;
+  transform: translateY(102%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.movie:hover .movie-overview {
+  transform: translateY(0%);
+}
+
+.tag {
+  background-color: #22254b;
+  border-radius: 5px;
+  font-weight: bold;
+  padding: 0.5rem;
+}
+
+.tag.green {
+  color: rgb(5, 184, 5);
+}
+
+.tag.orange {
+  color: orange;
+}
+
+.tag.red {
+  color: red;
+}
+
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: auto;
+  height: 300px;
+  margin-top: -80px;
+  border-radius: 0px 0px 40px 40px;
+}
+.samp{
+  font-Size: 1.6rem;
+  margin-Left:-10;
+  padding-top:15 ;
+  cursor: pointer;
+}
+.main__title {
+  color: white;
+  font-size: 2rem;
+}
+
+.input {
+  background-color: rgba(255,255,255,0.1);
+  border: 2px solid white;
+  border-radius: 25px;
+  color: white;
+  font-family: 'Muli', sans-serif;
+  font-size: 16px;
+  height: 50px;
+  margin-bottom: 20px;
+  outline: none;
+  padding: 0px 20px;
+  width: 20rem;
+}
+
+::placeholder {
+  color: white;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9zcmMvdmlldy9wdWJsaWMvaG9tZS9fX3N0eWxlc19fL2luZGV4LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGFBQWE7RUFDYiw4QkFBOEI7RUFDOUIseUJBQXlCO0VBQ3pCLGFBQWE7QUFDZjs7QUFFQTtFQUNFLFVBQVU7RUFDVixZQUFZO0VBQ1osZUFBZTtBQUNqQjtBQUNBO0VBQ0UsVUFBVTtFQUNWLFlBQVk7QUFDZDtBQUNBO0NBQ0Msa0JBQWtCO0VBQ2pCLHVCQUF1QjtFQUN2QixtQkFBbUI7RUFDbkIsZUFBZTs7QUFFakI7O0FBRUE7RUFDRSxhQUFhO0VBQ2IsZ0JBQWdCO0VBQ2hCLHlCQUF5QjtFQUN6QixZQUFZO0VBQ1osa0JBQWtCO0VBQ2xCLFlBQVk7RUFDWixpQkFBaUI7QUFDbkI7O0FBRUE7Q0FDQyxjQUFjO0FBQ2Y7O0FBRUE7RUFDRSxnQkFBZ0I7QUFDbEI7O0FBRUE7RUFDRSxZQUFZO0VBQ1oscUJBQXFCO0FBQ3ZCOztBQUVBO0VBQ0UsMEJBQTBCO0VBQzFCLFVBQVU7QUFDWjs7QUFFQTtFQUNFLG1CQUFtQjtFQUNuQixhQUFhO0VBQ2IsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLGlCQUFpQjtFQUNqQixXQUFXO0VBQ1gsWUFBWTtBQUNkO0FBQ0E7RUFDRSw2QkFBNkI7RUFDN0IseUJBQXlCO0VBQ3pCLG1CQUFtQjtFQUNuQixvQkFBb0I7RUFDcEIsaUJBQWlCO0VBQ2pCLHNCQUFzQjtFQUN0QixZQUFZO0FBQ2Q7O0FBRUE7RUFDRSxhQUFhO0FBQ2Y7O0FBRUE7RUFDRSxZQUFZO0FBQ2Q7O0FBRUE7O0NBRUM7QUFDRDtFQUNFLGFBQWE7RUFDYix1QkFBdUI7RUFDdkIsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLHlCQUF5QjtFQUN6QixtQkFBbUI7RUFDbkIsdUNBQXVDO0VBQ3ZDLGdCQUFnQixNQUFNLHVFQUF1RTtFQUM3RixrQkFBa0IsSUFBSSxvREFBb0Q7RUFDMUUsWUFBWTtFQUNaLFlBQVk7QUFDZDs7QUFFQTtFQUNFLGlCQUFpQjtFQUNqQixhQUFhO0VBQ2IsV0FBVztFQUNYLGdCQUFnQjtBQUNsQjs7QUFFQTtFQUNFLGFBQWE7RUFDYixtQkFBbUI7RUFDbkIsOEJBQThCO0VBQzlCLGFBQWE7QUFDZjs7QUFFQTtFQUNFLFNBQVM7QUFDWDs7QUFFQTs7Ozs7Q0FLQztBQUNEO0VBQ0Usc0JBQXNCO0VBQ3RCLGNBQWM7RUFDZCwyQkFBMkI7RUFDM0IsNEJBQTRCO0VBQzVCLHNDQUFzQztFQUN0QyxhQUFhO0VBQ2Isa0JBQWtCO0VBQ2xCLFNBQVM7RUFDVCxPQUFPO0VBQ1AsUUFBUTtFQUNSLGNBQWM7RUFDZCxnQkFBZ0I7RUFDaEIsMkJBQTJCO0VBQzNCLHNDQUFzQztBQUN4Qzs7QUFFQTtFQUNFLHlCQUF5QjtBQUMzQjs7QUFFQTtFQUNFLHlCQUF5QjtFQUN6QixrQkFBa0I7RUFDbEIsaUJBQWlCO0VBQ2pCLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxxQkFBcUI7QUFDdkI7O0FBRUE7RUFDRSxhQUFhO0FBQ2Y7O0FBRUE7RUFDRSxVQUFVO0FBQ1o7OztBQUdBO0VBQ0UsYUFBYTtFQUNiLG1CQUFtQjtFQUNuQix1QkFBdUI7RUFDdkIsc0JBQXNCO0VBQ3RCLFdBQVc7RUFDWCxhQUFhO0VBQ2IsaUJBQWlCO0VBQ2pCLGdDQUFnQztBQUNsQztBQUNBO0VBQ0UsaUJBQWlCO0VBQ2pCLGVBQWU7RUFDZixlQUFlO0VBQ2YsZUFBZTtBQUNqQjtBQUNBO0VBQ0UsWUFBWTtFQUNaLGVBQWU7QUFDakI7O0FBRUE7RUFDRSx1Q0FBdUM7RUFDdkMsdUJBQXVCO0VBQ3ZCLG1CQUFtQjtFQUNuQixZQUFZO0VBQ1osK0JBQStCO0VBQy9CLGVBQWU7RUFDZixZQUFZO0VBQ1osbUJBQW1CO0VBQ25CLGFBQWE7RUFDYixpQkFBaUI7RUFDakIsWUFBWTtBQUNkOztBQUVBO0VBQ0UsWUFBWTtBQUNkIiwic291cmNlc0NvbnRlbnQiOlsiaGVhZGVyIHtcbiAgZGlzcGxheTogZmxleDtcbiAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjM2Y1ZWZiO1xuICBwYWRkaW5nOiAxcmVtO1xufVxuXG4uaGVhZGVyX19pbWcge1xuICB3aWR0aDogMjQlO1xuICBoZWlnaHQ6IGF1dG87XG4gIGN1cnNvcjogcG9pbnRlcjtcbn1cbi5wcm9maWxle1xuICB3aWR0aDogMTAlO1xuICBoZWlnaHQ6IGF1dG87XG59XG4uaGVhZGVyX19tZW51IHtcblx0bWFyZ2luLXJpZ2h0OiA1MHB4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgbWFyZ2luLXRvcDogNXB4O1xuIFxufVxuXG4uaGVhZGVyX19tZW51IHVsIHtcbiAgZGlzcGxheTogbm9uZTtcbiAgbGlzdC1zdHlsZTogbm9uZTtcbiAgbWFyZ2luOiAwcHggMHB4IDBweCAtMTRweDtcbiAgcGFkZGluZzogMHB4O1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHdpZHRoOiAxMzBweDtcbiAgdGV4dC1hbGlnbjogcmlnaHQ7XG59XG5cbi5oZWFkZXJfX21lbnU6aG92ZXIgdWwsIHVsOmhvdmVyIHtcblx0ZGlzcGxheTogYmxvY2s7XG59XG5cbi5oZWFkZXJfX21lbnUgbGkge1xuICBtYXJnaW46IDEwcHggMHB4O1xufVxuXG4uaGVhZGVyX19tZW51IGxpIGEge1xuICBjb2xvcjogd2hpdGU7XG4gIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcbn1cblxuLmhlYWRlcl9fbWVudSBsaSBhOmhvdmVyIHtcbiAgdGV4dC1kZWNvcmF0aW9uOiB1bmRlcmxpbmU7XG4gIHdpZHRoOiAxMDA7XG59XG5cbi5oZWFkZXJfX21lbnUtLXByb2ZpbGUge1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBkaXNwbGF5OiBmbGV4O1xuICBjdXJzb3I6IHBvaW50ZXI7XG59XG5cbi5oZWFkZXJfX21lbnUtLXByb2ZpbGUgaW1nIHtcbiAgbWFyZ2luLXJpZ2h0OiA4cHg7XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IGF1dG87XG59XG4uc2VhcmNoIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7XG4gIGJvcmRlcjogMnB4IHNvbGlkICMyMjI1NGI7XG4gIGJvcmRlci1yYWRpdXM6IDUwcHg7XG4gIGZvbnQtZmFtaWx5OiBpbmhlcml0O1xuICBmb250LXNpemU6IDEuMnJlbTtcbiAgcGFkZGluZzogMC41cmVtIDEuNXJlbTtcbiAgY29sb3I6IHdoaXRlO1xufVxuXG4uc2VhcmNoOmZvY3VzIHtcbiAgb3V0bGluZTogbm9uZTtcbn1cblxuLnNlYXJjaDo6cGxhY2Vob2xkZXIge1xuICBjb2xvcjogd2hpdGU7XG59XG5cbi8qXG4gIEZsZXggV3JhcDogaHR0cHM6Ly9vcmlnYW1pZC5jb20vcHJvamV0b3MvZmxleGJveC1ndWlhLWNvbXBsZXRvLyNmbGV4LXdyYXBcbiovXG4ubW92aWUtY29udGFpbmVyIHtcbiAgZGlzcGxheTogZmxleDtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gIGZsZXgtd3JhcDogd3JhcDtcbn1cblxuLm1vdmllIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzM3M2I2OTtcbiAgYm9yZGVyLXJhZGl1czogMTBweDtcbiAgYm94LXNoYWRvdzogM3B4IDNweCA1cHggcmdiYSgwLDAsMCwwLjEpO1xuICBvdmVyZmxvdzogaGlkZGVuOyAgICAgLyogUGFyYSBhIGltYWdlbSBuYW8gY3JpYXIgdW1hIGJvcmRhIHBvbnR1ZGEgbmEgcGFydGUgc3VwZXJpb3IgZG8gYm94ICovXG4gIHBvc2l0aW9uOiByZWxhdGl2ZTsgICAvKiBSZWxhdGl2byBwYXJhIHNlciByZWZlcmVuY2lhIGFvIC5tb3ZpZS1vdmVydmlldyAqL1xuICBtYXJnaW46IDFyZW07XG4gIHdpZHRoOiAzMDBweDtcbn1cblxuLm1vdmllIGltZyB7XG4gIG9iamVjdC1maXQ6IGNvdmVyO1xuICBoZWlnaHQ6IDQ1MHB4O1xuICB3aWR0aDogMTAwJTtcbiAgYm9yZGVyLXRvcDogMTVweDtcbn1cblxuLm1vdmllLWluZm8ge1xuICBkaXNwbGF5OiBmbGV4O1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XG4gIHBhZGRpbmc6IDFyZW07XG59XG5cbi5tb3ZpZS1pbmZvIGgzIHtcbiAgbWFyZ2luOiAwO1xufVxuXG4vKlxuIFNvYnJlIGEgcHJvcHJpZWRhZGUgcG9zaXRpb24gZSBvIHBvcnF1ZSBlbGUgZXN0YSByZXNwZWl0YW5kbyBvIGVsZW1lbnRvIC5tb3ZpZTpcbiBodHRwczovL3B0LWJyLmxlYXJubGF5b3V0LmNvbS9wb3NpdGlvbi5odG1sXG4gU29icmUgYSBwcm9wcmllZGFkZSB0cmFuc2Zvcm06XG4gaHR0cHM6Ly9kZXZlbG9wZXIubW96aWxsYS5vcmcvcHQtQlIvZG9jcy9XZWIvQ1NTL3RyYW5zZm9ybVxuKi9cbi5tb3ZpZS1vdmVydmlldyB7XG4gIGJhY2tncm91bmQtY29sb3I6ICNmZmY7XG4gIGNvbG9yOiAjMjIyNTRiO1xuICBib3JkZXItdG9wLWxlZnQtcmFkaXVzOiAzcHg7XG4gIGJvcmRlci10b3AtcmlnaHQtcmFkaXVzOiAzcHg7XG4gIGJveC1zaGFkb3c6IDAgLTNweCA1cHggcmdiYSgwLDAsMCwwLjEpO1xuICBwYWRkaW5nOiAxcmVtO1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGJvdHRvbTogMDtcbiAgbGVmdDogMDtcbiAgcmlnaHQ6IDA7XG4gIG92ZXJmbG93OiBhdXRvO1xuICBtYXgtaGVpZ2h0OiAxMDAlO1xuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMTAyJSk7XG4gIHRyYW5zaXRpb246IHRyYW5zZm9ybSAwLjNzIGVhc2UtaW4tb3V0O1xufVxuXG4ubW92aWU6aG92ZXIgLm1vdmllLW92ZXJ2aWV3IHtcbiAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKDAlKTtcbn1cblxuLnRhZyB7XG4gIGJhY2tncm91bmQtY29sb3I6ICMyMjI1NGI7XG4gIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XG4gIHBhZGRpbmc6IDAuNXJlbTtcbn1cblxuLnRhZy5ncmVlbiB7XG4gIGNvbG9yOiByZ2IoNSwgMTg0LCA1KTtcbn1cblxuLnRhZy5vcmFuZ2Uge1xuICBjb2xvcjogb3JhbmdlO1xufVxuXG4udGFnLnJlZCB7XG4gIGNvbG9yOiByZWQ7XG59XG5cblxuLm1haW4ge1xuICBkaXNwbGF5OiBmbGV4O1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgd2lkdGg6IGF1dG87XG4gIGhlaWdodDogMzAwcHg7XG4gIG1hcmdpbi10b3A6IC04MHB4O1xuICBib3JkZXItcmFkaXVzOiAwcHggMHB4IDQwcHggNDBweDtcbn1cbi5zYW1we1xuICBmb250LVNpemU6IDEuNnJlbTtcbiAgbWFyZ2luLUxlZnQ6LTEwO1xuICBwYWRkaW5nLXRvcDoxNSA7XG4gIGN1cnNvcjogcG9pbnRlcjtcbn1cbi5tYWluX190aXRsZSB7XG4gIGNvbG9yOiB3aGl0ZTtcbiAgZm9udC1zaXplOiAycmVtO1xufVxuXG4uaW5wdXQge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDI1NSwyNTUsMjU1LDAuMSk7XG4gIGJvcmRlcjogMnB4IHNvbGlkIHdoaXRlO1xuICBib3JkZXItcmFkaXVzOiAyNXB4O1xuICBjb2xvcjogd2hpdGU7XG4gIGZvbnQtZmFtaWx5OiAnTXVsaScsIHNhbnMtc2VyaWY7XG4gIGZvbnQtc2l6ZTogMTZweDtcbiAgaGVpZ2h0OiA1MHB4O1xuICBtYXJnaW4tYm90dG9tOiAyMHB4O1xuICBvdXRsaW5lOiBub25lO1xuICBwYWRkaW5nOiAwcHggMjBweDtcbiAgd2lkdGg6IDIwcmVtO1xufVxuXG46OnBsYWNlaG9sZGVyIHtcbiAgY29sb3I6IHdoaXRlO1xufSJdLCJzb3VyY2VSb290IjoiIn0= */</style></head>
+  <body data-new-gr-c-s-check-loaded="14.1008.0" data-gr-ext-installed="">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"><header><div style="display: flex; align-items: center; justify-content: flex-start;"><img class="header__img" src="./React App_files/logo.ff45e97e.png" alt="MoviesTime"><samp class="samp">MoviesTime</samp></div><div class="header__menu"><div class="header__menu--profile"><img class="profile" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAEBgAABAYBmSDe8AAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAUCSURBVGiB7ZrLjxVFFMa/w8A8MIACA+MDEBeioIIhRoLgCw3KggUJYKKy0wVqxIhx69K4UWPURI1GE/8BiVHjKwqCMI4DBJgBMWCIDggq4THDY7w/F1XF7blcurv69qAxfMmkku7vPL7b1dWnTo10Cf8tWFmOgHGSFkiaL+lm/zeuhnZU0g5J2yVtlLTBzI6VlUNhAM3ACuATYJB4DAIfA8uBUY3kUuiJAG2SVktaI+kaf3lQ0mZJX0jaJmmXpN9rTCdJmilpjqRFkm6XNNLfOyDpZUlvmtmpInlFAVgE/JT4Vb8HHgPGF/A1AXgc2Jzwtwe4ZzhyD0HbgNeASkLA3SX6vxfo9L4rwCtAa1n+Q5AOYKsPcgJYDYwoNYiLMwJ4EjjpY3UBk8tyPjUxlXYAN2bwZwDPA18CvcAR4E9gP/ABMC9HzFlAj4+5G5jSqIjJfs4CbAKuSOG2A+8Cf6ctU37avJD1Tvn3J7w7u4FJRUW0+kcb3ocxKdxJwM4MAbU4g3vnRqf4HQNs8fxOoKWIkNe9gx5gQgpvBLA+UkQS64HmFP/tVGfFq7EiHvCGJ4FZGdxlDYgIWJsR4xagHzct78srog342Qd4Igf/oxKE7M8R52nP3UOeZRl4zht0Ak0ZXAOOlSAEYHpGrCag23PXZIloA/o8+f4cottLEgE5pgzwoOf+Ss1Tqf2oLZfUIanLzD7PcqxqnVQGLsvB+VTSVklXSVqWvFEr5FE/vpUzeCUnLw9OZxHMDFVze6QuCRiPK6tPAZfniYxb58vCDTljTgBOA2eBseF68oncKalJ0kYzO5rHqZkdlyu/G0VF0v6cMf+Q2y6MlHRXuJ4UssCPX0cmsSOSXw87I/cgX/kx5DxESCgGt0UmsS+SXw8/RPJDjucXsFQr3Fxz1ds0AQdLeD/6iNgW4KpjgN5wLWkcKtva7WkaxkkqY7/QofMbFWkIOZ6roJNCQnV7IsLhcUkDEfwLod/7yovQeam7aoVGBHm9mdlZSRsiErgQvjWzwRL8SLhdHEQ2EYDbcJVpUZwE5kbGnOhtD4drySdyxI9Rc97MOiWtirGpwSoz64q06fBjyHmIkL1+vL5AMusUt0gEHPK2sQg5hpyHCOnx45xYr2Z2WtJLBRJ60czOFLCb7cee8+5Q3enFftmD/Sjgx4h3oxMoVD0D33gfS+vdbCeyaKzjY2qEkEItHlxxG4rGc12dc1PLzA7L9W1bJK0sEkRuzudFX8EYKyU1S/rMzP6qywBWhcdeJAJxZX2ejVStf6M6fR9OI7YAv3ni4gKBpkcImVbA/xJve4CUFlIgr/XkbjKaDzV21zG0q56FTcC1Ef5HAtu9bXrzwRu0Avu8wVM5+AuB94GBCBEB/cB7wPwccdZ4m72ZTyNhtDQR6KY699uBZ6k2msvATuAZYGKdeLNxP1QFWJJLRMI4tEx7g3NgJvAhbvkbLpzyMeYmfrRiLVPvoBU3j8E1sd+g2DlhUVSAd6i+d9+R0sROPUMErpTb6Dd2PtE4fpE0z8wOXoiQur00sz5JdyhRnP0L2KUMEbkBTKF6VnIx0Qlc3fhvMVTMaNyJ1MVABXgbdww+PAAW49by4cIeYNGwCagR04I7fjhUooCDuG9Tvo9dyYKagYeAdbj1PxYDuIOiFY0KKPOfasZKWij3bxm3SpohaZpcyS1JZ+T6u7sldcst6+t9//gS/nf4B+Mty5hv+1kwAAAAAElFTkSuQmCC" alt=""><p>Perfil</p></div><ul><li><a href="http://localhost:3000/">Iniciar Sesión</a></li></ul></div></header><div><section class="main"><h2 class="main__title">¿Qué quieres ver hoy?</h2><form><input type="search" class="input" placeholder="Search..." value=""></form></section></div><div class="movie-container"><div class="movie"><img src="./React App_files/6Wdl9N6dL0Hi0T1qJLWSz6gMLbd.jpg" alt="Mortal Kombat"><div class="movie-info"><h3>Mortal Kombat</h3><span class="tag orange">7.9</span></div><div class="movie-overview"><h2>Overview:</h2><p>Washed-up MMA fighter Cole Young, unaware of his heritage, and hunted by Emperor Shang Tsung's best warrior, Sub-Zero, seeks out and trains with Earth's greatest champions as he prepares to stand against the enemies of Outworld in a high stakes battle for the universe.</p></div></div><div class="movie"><img src="./React App_files/pgqgaUx1cJb5oZQQ5v0tNARCeBp.jpg" alt="Godzilla vs. Kong"><div class="movie-info"><h3>Godzilla vs. Kong</h3><span class="tag green">8.2</span></div><div class="movie-overview"><h2>Overview:</h2><p>In a time when monsters walk the Earth, humanity’s fight for its future sets Godzilla and Kong on a collision course that will see the two most powerful forces of nature on the planet collide in a spectacular battle for the ages.</p></div></div><div class="movie"><img src="./React App_files/AoWY1gkcNzabh229Icboa1Ff0BM.jpg" alt="Vanquish"><div class="movie-info"><h3>Vanquish</h3><span class="tag orange">6.2</span></div><div class="movie-overview"><h2>Overview:</h2><p>Victoria is a young mother trying to put her dark past as a Russian drug courier behind her, but retired cop Damon forces Victoria to do his bidding by holding her daughter hostage. Now, Victoria must use guns, guts and a motorcycle to take out a series of violent gangsters—or she may never see her child again.</p></div></div><div class="movie"><img src="./React App_files/h8Rb9gBr48ODIwYUttZNYeMWeUU.jpg" alt="Demon Slayer -Kimetsu no Yaiba- The Movie: Mugen Train"><div class="movie-info"><h3>Demon Slayer -Kimetsu no Yaiba- The Movie: Mugen Train</h3><span class="tag green">8.3</span></div><div class="movie-overview"><h2>Overview:</h2><p>Tanjirō Kamado, joined with Inosuke Hashibira, a boy raised by boars who wears a boar's head, and Zenitsu Agatsuma, a scared boy who reveals his true power when he sleeps, boards the Infinity Train on a new mission with the Fire Hashira, Kyōjurō Rengoku, to defeat a demon who has been tormenting the people and killing the demon slayers who oppose it!</p></div></div><div class="movie"><img src="./React App_files/oBgWY00bEFeZ9N25wWVyuQddbAo.jpg" alt="Nobody"><div class="movie-info"><h3>Nobody</h3><span class="tag green">8.5</span></div><div class="movie-overview"><h2>Overview:</h2><p>Hutch Mansell, a suburban dad, overlooked husband, nothing neighbor — a "nobody." When two thieves break into his home one night, Hutch's unknown long-simmering rage is ignited and propels him on a brutal path that will uncover dark secrets he fought to leave behind.</p></div></div><div class="movie"><img src="./React App_files/b4gYVcl8pParX8AjkN90iQrWrWO.jpg" alt="The Unholy"><div class="movie-info"><h3>The Unholy</h3><span class="tag red">5.8</span></div><div class="movie-overview"><h2>Overview:</h2><p>Alice, a young hearing-impaired girl who, after a supposed visitation from the Virgin Mary, is inexplicably able to hear, speak and heal the sick. As word spreads and people from near and far flock to witness her miracles, a disgraced journalist hoping to revive his career visits the small New England town to investigate. When terrifying events begin to happen all around, he starts to question if these phenomena are the works of the Virgin Mary or something much more sinister.</p></div></div><div class="movie"><img src="./React App_files/tnAuB8q5vv7Ax9UAEje5Xi4BXik.jpg" alt="Zack Snyder&#39;s Justice League"><div class="movie-info"><h3>Zack Snyder's Justice League</h3><span class="tag green">8.5</span></div><div class="movie-overview"><h2>Overview:</h2><p>Determined to ensure Superman's ultimate sacrifice was not in vain, Bruce Wayne aligns forces with Diana Prince with plans to recruit a team of metahumans to protect the world from an approaching threat of catastrophic proportions.</p></div></div><div class="movie"><img src="./React App_files/6vcDalR50RWa309vBH1NLmG2rjQ.jpg" alt="The Marksman"><div class="movie-info"><h3>The Marksman</h3><span class="tag orange">7.5</span></div><div class="movie-overview"><h2>Overview:</h2><p>Jim Hanson’s quiet life is suddenly disturbed by two people crossing the US/Mexico border – a woman and her young son – desperate to flee a Mexican cartel. After a shootout leaves the mother dead, Jim becomes the boy’s reluctant defender. He embraces his role as Miguel’s protector and will stop at nothing to get him to safety, as they go on the run from the relentless assassins.</p></div></div><div class="movie"><img src="./React App_files/msI5a9TPnepx47JUb2vl88hb80R.jpg" alt="Miraculous World: Shanghai – The Legend of Ladydragon"><div class="movie-info"><h3>Miraculous World: Shanghai – The Legend of Ladydragon</h3><span class="tag orange">7.9</span></div><div class="movie-overview"><h2>Overview:</h2><p>To join Adrien in Shanghai, Marinette is going to visit her uncle Wang who is celebrating his anniversary. But, as soon as she arrives in China, her purse gets stolen with Tikki inside, whom she needs to secretly transform into Ladybug! Without money and alone in the immense city, Marinette accepts the help of a young and resourceful girl, Fei. The two girls will ally and discover the existence of a new magical jewel, the Prodigious. Hawk Moth, also present in Shanghai, seeks to finding it since a long time...</p></div></div><div class="movie"><img src="./React App_files/duK11VQd4UPDa7UJrgrGx90xJOx.jpg" alt="Thunder Force"><div class="movie-info"><h3>Thunder Force</h3><span class="tag red">5.8</span></div><div class="movie-overview"><h2>Overview:</h2><p>In a world where supervillains are commonplace, two estranged childhood best friends reunite after one devises a treatment that gives them powers to protect their city.</p></div></div><div class="movie"><img src="./React App_files/lPsD10PP4rgUGiGR4CCXA6iY0QQ.jpg" alt="Raya and the Last Dragon"><div class="movie-info"><h3>Raya and the Last Dragon</h3><span class="tag green">8.2</span></div><div class="movie-overview"><h2>Overview:</h2><p>Long ago, in the fantasy world of Kumandra, humans and dragons lived together in harmony. But when an evil force threatened the land, the dragons sacrificed themselves to save humanity. Now, 500 years later, that same evil has returned and it’s up to a lone warrior, Raya, to track down the legendary last dragon to restore the fractured land and its divided people.</p></div></div><div class="movie"><img src="./React App_files/9kg73Mg8WJKlB9Y2SAJzeDKAnuB.jpg" alt="Chaos Walking"><div class="movie-info"><h3>Chaos Walking</h3><span class="tag orange">7.3</span></div><div class="movie-overview"><h2>Overview:</h2><p>Two unlikely companions embark on a perilous adventure through the badlands of an unexplored planet as they try to escape a dangerous and disorienting reality, where all inner thoughts are seen and heard by everyone.</p></div></div><div class="movie"><img src="./React App_files/1UCOF11QCw8kcqvce8LKOO6pimh.jpg" alt="Monster Hunter"><div class="movie-info"><h3>Monster Hunter</h3><span class="tag orange">7.1</span></div><div class="movie-overview"><h2>Overview:</h2><p>A portal transports Cpt. Artemis and an elite unit of soldiers to a strange world where powerful monsters rule with deadly ferocity. Faced with relentless danger, the team encounters a mysterious hunter who may be their only hope to find a way home.</p></div></div><div class="movie"><img src="./React App_files/yMoMlJo2msoVwmuf6k1C78MrB3H.jpg" alt="Tom &amp; Jerry"><div class="movie-info"><h3>Tom &amp; Jerry</h3><span class="tag orange">7.3</span></div><div class="movie-overview"><h2>Overview:</h2><p>Tom the cat and Jerry the mouse get kicked out of their home and relocate to a fancy New York hotel, where a scrappy employee named Kayla will lose her job if she can’t evict Jerry before a high-class wedding at the hotel. Her solution? Hiring Tom to get rid of the pesky mouse.</p></div></div><div class="movie"><img src="./React App_files/6goDkAD6J3br81YMQf0Gat8Bqjy.jpg" alt="New Gods: Nezha Reborn"><div class="movie-info"><h3>New Gods: Nezha Reborn</h3><span class="tag green">8.8</span></div><div class="movie-overview"><h2>Overview:</h2><p>3000 years after the boy-god Nezha conquers the Dragon King then disappears in mythological times, he returns as an ordinary man to find his own path to becoming a true hero.</p></div></div><div class="movie"><img src="./React App_files/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg" alt="Wonder Woman 1984"><div class="movie-info"><h3>Wonder Woman 1984</h3><span class="tag orange">6.8</span></div><div class="movie-overview"><h2>Overview:</h2><p>A botched store robbery places Wonder Woman in a global battle against a powerful and mysterious ancient force that puts her powers in jeopardy.</p></div></div><div class="movie"><img src="./React App_files/6XYLiMxHAaCsoyrVo38LBWMw2p8.jpg" alt="Outside the Wire"><div class="movie-info"><h3>Outside the Wire</h3><span class="tag orange">6.5</span></div><div class="movie-overview"><h2>Overview:</h2><p>In the near future, a drone pilot is sent into a deadly militarized zone and must work with an android officer to locate a doomsday device.</p></div></div><div class="movie"><img src="./React App_files/4VlXER3FImHeFuUjBShFamhIp9M.jpg" alt="Mortal Kombat Legends: Scorpion&#39;s Revenge"><div class="movie-info"><h3>Mortal Kombat Legends: Scorpion's Revenge</h3><span class="tag green">8.3</span></div><div class="movie-overview"><h2>Overview:</h2><p>After the vicious slaughter of his family by stone-cold mercenary Sub-Zero, Hanzo Hasashi is exiled to the torturous Netherrealm. There, in exchange for his servitude to the sinister Quan Chi, he’s given a chance to avenge his family – and is resurrected as Scorpion, a lost soul bent on revenge. Back on Earthrealm, Lord Raiden gathers a team of elite warriors – Shaolin monk Liu Kang, Special Forces officer Sonya Blade and action star Johnny Cage – an unlikely band of heroes with one chance to save humanity. To do this, they must defeat Shang Tsung’s horde of Outworld gladiators and reign over the Mortal Kombat tournament.</p></div></div><div class="movie"><img src="./React App_files/p9YDHJKvUoi7v2SCd3vLGPae1Xp.jpg" alt="Space Sweepers"><div class="movie-info"><h3>Space Sweepers</h3><span class="tag orange">7.2</span></div><div class="movie-overview"><h2>Overview:</h2><p>When the crew of a space junk collector ship called The Victory discovers a humanoid robot named Dorothy that's known to be a weapon of mass destruction, they get involved in a risky business deal which puts their lives at stake.</p></div></div><div class="movie"><img src="./React App_files/fFRq98cW9lTo6di2o4lK1qUAWaN.jpg" alt="Sentinelle"><div class="movie-info"><h3>Sentinelle</h3><span class="tag orange">6</span></div><div class="movie-overview"><h2>Overview:</h2><p>Transferred home after a traumatizing combat mission, a highly trained French soldier uses her lethal skills to hunt down the man who hurt her sister.</p></div></div></div><div><h1 style="color: red;"> Reports</h1><ul><li> <a href="http://localhost:3000/"> Index</a></li><li> <a href="http://localhost:3000/information"> Information</a></li></ul></div></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  <script src="./React App_files/bundle.js"></script><script src="./React App_files/vendors_main.chunk.js"></script><script src="./React App_files/main.chunk.js"></script>
+
+</body></html>
